@@ -11,9 +11,9 @@ const Nosotros = () => {
   }, [])
 
   const obtenerDatos = async () => {
-   const data =  await fetch("https://jsonplaceholder.typicode.com/users")
+   const data =  await fetch("https://age-of-empires-2-api.herokuapp.com/api/v1/civilizations")
    const users = await data.json()
-   setEquipo(users)
+   setEquipo(users.civilizations)
   }
 
   return (
@@ -23,7 +23,7 @@ const Nosotros = () => {
           {
             equipo.map(item => (
               <li key={item.id}>
-                {item.name} & {item.email}
+                {item.name} & {item.expansion}
               </li>
             ))
           }
