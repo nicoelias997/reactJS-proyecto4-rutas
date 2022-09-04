@@ -4,13 +4,11 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link,
   NavLink
 } from "react-router-dom";
 
 import Inicio from './components/Inicio';
 import Bla from './components/Bla';
-import Parametros from './components/Parametros';
 import User from './components/User';
 import Contacto from "./components/Contacto"
 import Nosotros from "./components/Nosotros"
@@ -20,9 +18,12 @@ function App() {
     <Router>
       <div className="container mt-5">
         <div className="btn-group">
-          <Link to="/" className="btn btn-dark">Inicio</Link>
-          <Link to="/bla" className="btn btn-dark">Bla bla bla</Link>
+          <NavLink to="/" className={({isActive}) => isActive ? "btn btn-danger" : "btn btn-dark" }>Inicio</NavLink>
+          <NavLink to="/bla" className={({isActive}) => isActive ? "btn btn-danger" : "btn btn-dark" }>Bla bla bla</NavLink>
+          <NavLink to="/nosotros" className={({isActive}) => isActive ? "btn btn-danger" : "btn btn-dark" }>Nosotros</NavLink>
+          <NavLink to="/contacto" className={({isActive}) => isActive ? "btn btn-danger" : "btn btn-dark" }>Contacto</NavLink>
           <NavLink to="/user" className={({isActive}) => isActive ? "btn btn-danger" : "btn btn-dark" }>Users</NavLink>
+          
         </div>
         <hr />
         <Routes>
@@ -33,8 +34,6 @@ function App() {
           <Route path="/contacto" exact element={<Contacto></Contacto>}>
           </Route>
           <Route path="/nosotros" exact element={<Nosotros></Nosotros>}>
-          </Route>
-          <Route path="/user" exact element={<Parametros></Parametros>}>
           </Route>
           <Route path="/user" exact element={<User></User>}>
           </Route>
