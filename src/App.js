@@ -27,6 +27,8 @@ function App() {
         </div>
         <hr />
         <Routes>
+          <Route path="/nosotros/:id" element={<User></User>}>
+          </Route>
           <Route path="/" exact element={<Inicio></Inicio>}>
           </Route>
           <Route path="/bla" exact element={<Bla></Bla>}>
@@ -35,10 +37,7 @@ function App() {
           </Route>
           <Route path="/nosotros" exact element={<Nosotros></Nosotros>}>
           </Route>
-          <Route path="/user" exact element={<User></User>}>
-          </Route>
-
-          
+                          
         </Routes>
       </div>
     </Router>

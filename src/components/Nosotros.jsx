@@ -1,8 +1,9 @@
 import React from 'react'
+import {
+  NavLink
+} from "react-router-dom";
 
 const Nosotros = () => {
-
- 
 
   const [equipo, setEquipo] = React.useState([])
 
@@ -22,8 +23,11 @@ const Nosotros = () => {
         <ul>
           {
             equipo.map(item => (
+              
               <li key={item.id}>
-                {item.name} & {item.expansion}
+                <NavLink to={`/nosotros/${item.id}`}>
+                {item.name} - {item.expansion}
+                </NavLink>
               </li>
             ))
           }
